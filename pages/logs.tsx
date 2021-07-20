@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Center, LogsCard, AutoLayout } from 'components';
 import { styled } from 'stitches';
+import Head from 'next/head';
 
 const Title = styled('h2', {
   color: '#222222',
@@ -12,17 +13,22 @@ const Text = styled('p', {
 });
 const Logs = () => {
   return (
-    <Container css={{ marginTop: 100, padding: 20, minHeight: '60vh' }}>
-      <AutoLayout y space={1}>
-        <AutoLayout y space={0.8}>
-          <Title>Logs</Title>
-          <Text>
-            Here you will see all the incoming operations, in real time.
-          </Text>
+    <>
+      <Head>
+        <title>Bitfount - Logs page</title>
+      </Head>
+      <Container css={{ marginTop: 100, padding: 20, minHeight: '60vh' }}>
+        <AutoLayout y space={1}>
+          <AutoLayout y space={0.8}>
+            <Title>Logs</Title>
+            <Text>
+              Here you will see all the incoming operations, in real time.
+            </Text>
+          </AutoLayout>
+          <LogsCard logs={logs} />
         </AutoLayout>
-        <LogsCard logs={logs} />
-      </AutoLayout>
-    </Container>
+      </Container>
+    </>
   );
 };
 

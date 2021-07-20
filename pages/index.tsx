@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Center, Button, AutoLayout } from 'components';
 import { Phases } from 'sections';
+import Head from 'next/head';
 
 import { styled } from 'stitches';
 import Link from 'next/link';
@@ -20,23 +21,28 @@ const Text = styled('p', {
 });
 const Home = () => {
   return (
-    <Container css={{ marginTop: '20vh', padding: 20, minHeight: '50vh' }}>
-      <AutoLayout y space={2}>
-        <Title>Hello Bitfount,</Title>
-        <Text>
-          My name is <b>Ilyass Ben Hakim</b>, and this is a small simulation
-          coming from my imagination of how can we display the different
-          iterations of an execution.
-        </Text>
-        <Center>
-          <Link href='/iterations'>
-            <a>
-              <Button>SIMULATE</Button>
-            </a>
-          </Link>
-        </Center>
-      </AutoLayout>
-    </Container>
+    <>
+      <Head>
+        <title>Bitfount - Home page</title>
+      </Head>
+      <Container css={{ marginTop: '20vh', padding: 20, minHeight: '50vh' }}>
+        <AutoLayout y space={2}>
+          <Title>Hello Bitfount,</Title>
+          <Text>
+            My name is <b>Ilyass Ben Hakim</b>, and this is a small simulation
+            coming from my imagination of how can we display the different
+            iterations of an execution.
+          </Text>
+          <Center>
+            <Link href='/iterations'>
+              <a>
+                <Button>SIMULATE</Button>
+              </a>
+            </Link>
+          </Center>
+        </AutoLayout>
+      </Container>
+    </>
   );
 };
 export default Home;
