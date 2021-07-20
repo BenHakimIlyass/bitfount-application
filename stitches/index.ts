@@ -22,6 +22,7 @@ export const { styled, css, getCssString } = createCss({
     },
     fonts: {
       montserrat: 'Montserrat, sans-serif',
+      code: 'Source Code Pro',
     },
     shadows: {
       sh1: '0px 4px 19px rgba(27, 32, 76, 0.06)',
@@ -42,5 +43,8 @@ export const globalStyles = global({
     background: 'transparent',
     border: 'none',
     cursor: 'pointer',
+  },
+  'h1, h2, h3, h4, h5, h6': {
+    margin: 0,
   },
 });

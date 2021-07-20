@@ -6,3 +6,4 @@ export { default as Container } from "./container";
 export { default as Footer } from "./footer";
 export { default as Button } from "./button";
 export { default as Center } from "./center";
+export { default as LogsCard } from "./logsCard";

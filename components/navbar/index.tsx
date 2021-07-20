@@ -1,6 +1,8 @@
 import React from 'react';
 import { styled } from 'stitches';
 import { Container } from 'components';
+import Image from 'next/image';
+import Link from 'next/link';
 const Playground = styled('div', {
   backgroundColor: '#fff',
   boxShadow: '$sh2',
@@ -14,9 +16,16 @@ const Navbar = () => {
   return (
     <Playground>
       <Container>
-        <a href='https://www.bitfount.com/' target='_blanc'>
-          <img src='/logo.png' alt='bitfount-logo' />
-        </a>
+        <Link href='/'>
+          <a>
+            <Image
+              src='/logo.png'
+              alt='bitfount-logo'
+              width={130}
+              height={28}
+            />
+          </a>
+        </Link>
       </Container>
     </Playground>
   );
