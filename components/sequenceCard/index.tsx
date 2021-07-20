@@ -1,45 +1,46 @@
-import AutoLayout from "components/autoLayout";
-import React from "react";
-import { styled } from "stitches";
-import { SequenceStatus } from "configs";
-import statusVariants from "./statusVariants";
-import { motion } from "framer-motion";
+import AutoLayout from 'components/autoLayout';
+import React from 'react';
+import { styled } from 'stitches';
+import { SequenceStatus } from 'configs';
+import statusVariants from './statusVariants';
+import { motion } from 'framer-motion';
 
 const Info = styled(motion.div, {
-  color: "$gray400",
-  fontStyle: "italic",
+  color: '$gray400',
+  fontStyle: 'italic',
   fontSize: 16,
-  span: {
-    textDecoration: "underline",
-    cursor: "pointer"
-  }
+  a: {
+    textDecoration: 'underline',
+    cursor: 'pointer',
+    color: '$gray400',
+  },
 });
 const Text = styled(motion.div, {
   fontSize: 18,
   span: {
-    fontWeight: 700
-  }
+    fontWeight: 700,
+  },
 });
-const Playground = styled("div", {
-  backgroundColor: "#fff",
-  boxShadow: "$sh1",
+const Playground = styled('div', {
+  backgroundColor: '#fff',
+  boxShadow: '$sh1',
   padding: 16,
-  borderRadius: 8
+  borderRadius: 8,
 });
 
 type Props = {
   label: string | JSX.Element;
   status: keyof typeof SequenceStatus;
 };
-const SequenceCard = ({ label, status = "ERROR" }: Props) => {
+const SequenceCard = ({ label, status = 'ERROR' }: Props) => {
   const motionProps = (delay: number) => ({
     initial: { opacity: 0 },
     animate: { opacity: 1 },
-    transition: { delay }
+    transition: { delay },
   });
   return (
     <Playground>
-      <AutoLayout x css={{ justifyContent: "space-between" }}>
+      <AutoLayout x css={{ justifyContent: 'space-between' }}>
         <AutoLayout y space={0.4}>
           <Text {...motionProps(0)}>{label}</Text>
           <Info {...motionProps(0.4)}>{statusVariants[status].info}</Info>

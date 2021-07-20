@@ -1,21 +1,41 @@
 import React from 'react';
-import { Container, Center, Button } from 'components';
+import { Container, Center, Button, AutoLayout } from 'components';
 import { Phases } from 'sections';
 
+import { styled } from 'stitches';
+import Link from 'next/link';
+
+const Title = styled('h2', {
+  color: '#222222',
+  fontSize: 38,
+  fontWeight: 600,
+  textAlign: 'center',
+});
+const Text = styled('p', {
+  textAlign: 'center',
+  color: '#222222',
+  fontSize: 18,
+  lineHeight: '22px',
+  padding: '0 128px',
+});
 const Home = () => {
-  const [simulation, setSimulation] = React.useState(false);
-  const toggleSimulation = () => setSimulation((prev) => !prev);
   return (
-    <Container css={{ marginTop: 100, padding: 20, minHeight: '60vh' }}>
-      {simulation ? (
-        <Phases />
-      ) : (
+    <Container css={{ marginTop: '20vh', padding: 20, minHeight: '50vh' }}>
+      <AutoLayout y space={2}>
+        <Title>Hello Bitfount,</Title>
+        <Text>
+          My name is <b>Ilyass Ben Hakim</b>, and this is a small simulation
+          coming from my imagination of how can we display the different
+          iterations of an execution.
+        </Text>
         <Center>
-          <Button onClick={toggleSimulation} css={{ marginTop: '20vh' }}>
-            SIMULATE
-          </Button>
+          <Link href='/iterations'>
+            <a>
+              <Button>SIMULATE</Button>
+            </a>
+          </Link>
         </Center>
-      )}
+      </AutoLayout>
     </Container>
   );
 };

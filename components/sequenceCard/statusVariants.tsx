@@ -1,26 +1,29 @@
-import { SequenceStatus } from "../../configs";
-import { Completed, Error, Queued, Pending } from "./icons";
-
+import { SequenceStatus } from '../../configs';
+import { Completed, Error, Queued, Pending } from './icons';
+import Link from 'next/link';
 const statusVariant = {
   [SequenceStatus.PENDING]: {
-    info: "Pending...",
-    icon: Pending
+    info: 'Pending...',
+    icon: Pending,
   },
   [SequenceStatus.ERROR]: {
     info: (
       <>
-        An error occured, <span>click here to see build logs.</span>
+        An error occured,{' '}
+        <Link href='/logs'>
+          <a>click here to see build logs.</a>
+        </Link>
       </>
     ),
-    icon: Error
+    icon: Error,
   },
   [SequenceStatus.QUEUED]: {
-    info: "Queued",
-    icon: Queued
+    info: 'Queued',
+    icon: Queued,
   },
   [SequenceStatus.COMPLETED]: {
-    info: "Completed",
-    icon: Completed
-  }
+    info: 'Completed',
+    icon: Completed,
+  },
 };
 export default statusVariant;

@@ -17,7 +17,7 @@ const Logs = () => {
         <AutoLayout y space={0.8}>
           <Title>Logs</Title>
           <Text>
-            Here you will see all the incoming operations, in real time
+            Here you will see all the incoming operations, in real time.
           </Text>
         </AutoLayout>
         <LogsCard logs={logs} />
