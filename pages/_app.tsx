@@ -1,7 +1,24 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import { globalStyles } from 'stitches';
+import { Navbar, Container, Center, Button, Footer } from 'components';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <div>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        {globalStyles()}
+        <Component {...pageProps} />
+      </main>
+      <footer>
+            <Footer />
+ 
+      </footer>
+    </div>
+  );
 }
-export default MyApp
+export default MyApp;
+
+
