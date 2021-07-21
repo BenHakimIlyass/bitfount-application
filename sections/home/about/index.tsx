@@ -58,6 +58,7 @@ const About = () => {
               space={1}
               css={{ justifyContent: 'space-between', flexWrap: 'nowrap' }}
             >
+              {/* What do I do? */}
               <Frame {...motionProps(0)}>
                 <Interest />
                 <AutoLayout y space={1}>
@@ -69,6 +70,8 @@ const About = () => {
                   </Text>
                 </AutoLayout>
               </Frame>
+
+              {/* My education */}
               <Frame {...motionProps(0.2)}>
                 <Education />
                 <AutoLayout y space={1}>
@@ -80,6 +83,8 @@ const About = () => {
                   </Text>
                 </AutoLayout>
               </Frame>
+
+              {/* My interest */}
               <Frame {...motionProps(0.4)}>
                 <Code />
                 <AutoLayout y space={1}>
@@ -94,6 +99,7 @@ const About = () => {
             </AutoLayout>
           ) : null}
         </div>
+        <Button outlined>PORTFOLIO</Button>
       </AutoLayout>
     </section>
   );

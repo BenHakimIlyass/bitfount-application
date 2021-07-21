@@ -6,7 +6,7 @@ import { styled } from 'stitches';
 import Link from 'next/link';
 
 const Title = styled(motion.h2, {
-  color: '#222222',
+  color: '$blue',
   fontSize: 38,
   fontWeight: 600,
   textAlign: 'center',
@@ -14,7 +14,7 @@ const Title = styled(motion.h2, {
 });
 const Text = styled(motion.p, {
   textAlign: 'center',
-  color: '#222222',
+  color: '$nightMarket',
   fontSize: 18,
   lineHeight: '22px',
   padding: '0 128px',
