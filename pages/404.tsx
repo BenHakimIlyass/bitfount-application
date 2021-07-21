@@ -35,7 +35,7 @@ const Home = () => {
         <Container>
           <AutoLayout y space={2}>
             <Title>Wait is this 404?</Title>
-            <Text>Congratulations you've found the lost page</Text>
+            <Text>{"Congratulations you've found the lost page"}</Text>
             <Center>
               <Button>HOME PAGE</Button>
             </Center>
