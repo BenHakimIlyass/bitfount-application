@@ -13,6 +13,11 @@ const Title = styled('h2', {
   overflow: 'hidden',
   lineHeight: '29px',
 });
+const Tag = styled('p', {
+  color: '$orange',
+  fontSize: 14,
+  fontWeight: 600,
+});
 const Text = styled('p', {
   color: '$nightMarket',
   fontSize: 18,
@@ -48,7 +53,7 @@ const About = () => {
           <Title>About me</Title>
           <Text ref={ref}>
             I’m Ilyass Ben Hakim, and I’m a software engineer, self-taught
-            frontend developer and UI UX designer.
+            frontend developer.
           </Text>
         </AutoLayout>
         <div style={{ minHeight: 240 }}>
@@ -99,9 +104,34 @@ const About = () => {
             </AutoLayout>
           ) : null}
         </div>
-        <Button outlined>PORTFOLIO</Button>
+        <AutoLayout x space={1}>
+          {technologies.map((item, i) => (
+            <Tag key={item + i}>#{item}</Tag>
+          ))}
+        </AutoLayout>
+        <a href='https://ilyassbh.me' target='_blanc'>
+          <Button outlined>PORTFOLIO</Button>
+        </a>
       </AutoLayout>
     </section>
   );
 };
 export default About;
+const technologies = [
+  'ReactJS',
+  'NextJS',
+  'GraphQL',
+  'Hooks',
+  'Redux',
+  'Typescript',
+  'CSS',
+  'Styled-components',
+  'Stitches',
+  'Framer-motion',
+  'React-spring',
+  'Functional programming',
+  'Git',
+  'Npm',
+  'Figma',
+  'Adobe XD',
+];

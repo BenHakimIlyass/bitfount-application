@@ -1,4 +1,4 @@
-import AutoLayout from 'components/autoLayout';
+import { AutoLayout, MotionWrapper, MotionChild } from 'components';
 import { styled } from 'stitches';
 
 const Playground = styled('div', {
@@ -17,9 +17,9 @@ type Props = {
 const LogsCard = ({ logs }: Props) => {
   return (
     <Playground>
-      <AutoLayout y space={0.4}>
+      <AutoLayout y space={0.4} as={MotionWrapper}>
         {logs.map((item, key) => (
-          <div key={key}>
+          <MotionChild key={key}>
             <Text
               css={{
                 color: item.status === 'ERROR' ? '$orange' : '#fff',
@@ -28,7 +28,7 @@ const LogsCard = ({ logs }: Props) => {
             >
               {item.before === '$' ? '$' : null} {item.text}
             </Text>
-          </div>
+          </MotionChild>
         ))}
       </AutoLayout>
     </Playground>

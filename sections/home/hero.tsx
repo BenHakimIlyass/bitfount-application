@@ -23,7 +23,7 @@ const Text = styled(motion.p, {
 const Hero = () => {
   return (
     <section>
-      <AutoLayout y space={3}>
+      <AutoLayout y space={2}>
         <Title
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

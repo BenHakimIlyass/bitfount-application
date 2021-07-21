@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, Center, Button, AutoLayout } from 'components';
+import { Container, AutoLayout, Button, Center } from 'components';
 import { Phases } from 'sections';
 import Head from 'next/head';
 import { styled } from 'stitches';
 
 const Box = styled('div', {
-  padding: '20vh 0',
+  paddingTop: '30vh',
   minHeight: '60vh',
   backgroundImage: 'url(/blurLayer2.png)',
   backgroundPosition: 'center left',
@@ -17,11 +17,13 @@ const Title = styled('h2', {
   color: '#222222',
   fontSize: 38,
   fontWeight: 600,
+  textAlign: 'center',
 });
 const Text = styled('p', {
   color: '#222222',
   fontSize: 18,
   lineHeight: '22px',
+  textAlign: 'center',
 });
 const Home = () => {
   return (
@@ -32,12 +34,11 @@ const Home = () => {
       <Box>
         <Container>
           <AutoLayout y space={2}>
-            <Title>Iterations</Title>
-            <Text>
-              Here are all the <b>running</b>, <b>queued</b> and{' '}
-              <b>completed</b> execution steps.
-            </Text>
-            <Phases />
+            <Title>Wait is this 404?</Title>
+            <Text>Congratulations you've found the lost page</Text>
+            <Center>
+              <Button>HOME PAGE</Button>
+            </Center>
           </AutoLayout>
         </Container>
       </Box>
