@@ -1,23 +1,18 @@
 import React from 'react';
-import { Container, Center, Button, AutoLayout } from 'components';
-import { Phases } from 'sections';
+import { Container, AutoLayout } from 'components';
+import { Hero, About } from 'sections';
 import Head from 'next/head';
 
 import { styled } from 'stitches';
-import Link from 'next/link';
 
-const Title = styled('h2', {
-  color: '#222222',
-  fontSize: 38,
-  fontWeight: 600,
-  textAlign: 'center',
-});
-const Text = styled('p', {
-  textAlign: 'center',
-  color: '#222222',
-  fontSize: 18,
-  lineHeight: '22px',
-  padding: '0 128px',
+const Box = styled('div', {
+  paddingTop: '20vh',
+  minHeight: '60vh',
+  backgroundImage: 'url(/blurLayer.png)',
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  borderRadius: '0 0 50px 50px',
 });
 const Home = () => {
   return (
@@ -25,21 +20,15 @@ const Home = () => {
       <Head>
         <title>Bitfount - Home page</title>
       </Head>
-      <Container css={{ marginTop: '20vh', padding: 20, minHeight: '50vh' }}>
-        <AutoLayout y space={2}>
-          <Title>Hello Bitfount,</Title>
-          <Text>
-            My name is <b>Ilyass Ben Hakim</b>, and this is a small simulation
-            coming from my imagination of how can we display the different
-            iterations of an execution.
-          </Text>
-          <Center>
-            <Link href='/iterations'>
-              <a>
-                <Button>SIMULATE</Button>
-              </a>
-            </Link>
-          </Center>
+      <Container css={{ padding: '100px 0' }}>
+        <AutoLayout y space={4}>
+          {/* hero section */}
+          <Box>
+            <Hero />
+          </Box>
+
+          {/* About section */}
+          <About />
         </AutoLayout>
       </Container>
     </>

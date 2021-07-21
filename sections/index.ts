@@ -1,1 +1,2 @@
-export { default as Phases } from "./phases";
+export { default as Phases } from './phases';
+export * from './home';

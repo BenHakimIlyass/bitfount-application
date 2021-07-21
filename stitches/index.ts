@@ -9,6 +9,7 @@ export const { styled, css, getCssString } = createCss({
       gray200: '#F7F7F9',
       gray300: '#F4F4F8',
       gray400: '#9193A8',
+      nightMarket: '#4E5D78',
     },
     space: {
       1: '5px',
